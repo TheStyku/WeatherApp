@@ -17,7 +17,7 @@ function App() {
     let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c5ef29e043f242eba35151603221509&q=${city_name}&aqi=no&days=14&lang=pl`);
     let result = await response.json();
     setData(result);
-    (result.message === 'city not found') ? (
+    (result.error.message === "No matching location found.") ? (
       alert('Miasto nie istnieje')
     ) : (
       console.log(result)
