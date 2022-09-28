@@ -6,6 +6,7 @@ function Form({ city_name, setCity_Name, fetchAsync }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchAsync();
+    setCity_Name('')
   }
 
   return (

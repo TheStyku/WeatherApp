@@ -14,17 +14,17 @@ function App() {
   const [city_name, setCity_Name] = useState();
 
   async function fetchAsyncName() {
-    let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c5ef29e043f242eba35151603221509&q=${city_name}&aqi=no&days=14&lang=pl`);
+
+     let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c5ef29e043f242eba35151603221509&q=${city_name}&aqi=no&days=14&lang=pl`);
     let result = await response.json();
-    setData(result);
-    (result.error.message === "No matching location found.") ? (
-      alert('Miasto nie istnieje')
+    (response.ok) ? (
+      setData(result)
     ) : (
-      console.log(result)
+      alert('Miasto nie istnieje')
     );
     return console.log(result);
   }
-
+  //https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/forecast?locations=Łeba,Polska&aggregateHours=24&unitGroup=us&shortColumnNames=false&contentType=csv&key=Z6TGRNT35UN6TTDF3Z52WEPBE
   async function fetchAsyncLocal() {
     try {
       let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c5ef29e043f242eba35151603221509&q=${lat},${long}&aqi=no&days=14&lang=pl`)
@@ -60,18 +60,21 @@ function App() {
             <button className='btn_location' onClick={fetchAsyncLocal}><MdMyLocation/></button>
           </div>
         </div>
-        <div className='weather_text' >
-          <p>Dzisiejsza pogoda</p>
-          <p className='header_name'>Miejscowość: {(data.length !== 0) ? (data.location.name) : (<></>)} </p>
-        </div>
+        
         {(data.length === 0) ? (
           <></>
         ) : (
+          <>
+          <div className='weather_text' >
+          <p>Dzisiejsza pogoda</p>
+          <p className='header_name'>Miejscowość: {(data.length !== 0) ? (data.location.name) : (<></>)} </p>
+        </div>
           <div className='content'>
             <ToDayWeather weatherData={data} />
             <h2 className='long_term_tittle'>Pogoda {data.location.name} - prognoza długo terminowa </h2>
             <FoureDays weatherData={data} />
           </div>
+          </>
         )}
       </div>
     </div>
@@ -79,3 +82,4 @@ function App() {
 }
 
 export default App;
+
