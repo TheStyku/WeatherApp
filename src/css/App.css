@@ -71,6 +71,14 @@ ul {
   opacity: 1;
 }
 
+.bg_img{
+  background: url('C:\Users\Patryk Styczyński\Desktop\Projekty\React\weatherapp\img\sky.jpg') center center/cover no-repeat;
+  background-color: #f0f7fc;
+  max-width: 100%;
+  height: 91vh;
+  
+}
+
 .weather_text {
   display: flex;
   margin: 3vh;
@@ -111,7 +119,7 @@ ul {
   margin: 1vh;
 }
 
-.content .To_Day_Weather .Weather_content .Weather_icon {
+.Weather_icon{
   background-color: aquamarine;
   color: white;
   width: 2rem;
@@ -168,6 +176,9 @@ ul {
   justify-content: center;
   font-size: 0.9rem;
 }
+.content .Days .box .box_day p::first-letter{
+  text-transform:capitalize;
+}
 
 .content .Days .box .box_day .long_grey_text{
   color: #8f8f8f;
@@ -187,11 +198,6 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.content .Days .box .box_body .icon{
-  width: 40%;
-  height: 4rem;
 }
 
 .content .Days .box .box_body .tittle_text {

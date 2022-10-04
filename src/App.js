@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Form from './components/Form';
 import FoureDays from './components/FoureDays';
 import ToDayWeather from './components/ToDayWeather';
-import {MdMyLocation} from 'react-icons/md'
+import { MdMyLocation } from 'react-icons/md'
 
 
 function App() {
@@ -14,8 +14,7 @@ function App() {
   const [city_name, setCity_Name] = useState();
 
   async function fetchAsyncName() {
-
-     let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c5ef29e043f242eba35151603221509&q=${city_name}&aqi=no&days=14&lang=pl`);
+    let response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city_name}%2C%20Polska?unitGroup=metric&include=days&lang=pl&key=${process.env.APP_KEY}&contentType=json`);
     let result = await response.json();
     (response.ok) ? (
       setData(result)
@@ -24,10 +23,10 @@ function App() {
     );
     return console.log(result);
   }
-  //https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/forecast?locations=Łeba,Polska&aggregateHours=24&unitGroup=us&shortColumnNames=false&contentType=csv&key=Z6TGRNT35UN6TTDF3Z52WEPBE
+
   async function fetchAsyncLocal() {
     try {
-      let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c5ef29e043f242eba35151603221509&q=${lat},${long}&aqi=no&days=14&lang=pl`)
+      let response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${long}?unitGroup=metric&include=days&lang=pl&key=${process.env.APP_KEY}&contentType=json`);
       let result = await response.json();
       setData(result);
       return console.log(result);
@@ -57,23 +56,26 @@ function App() {
           </div>
           <div className='header_content'>
             <p className='header_name'>Znajdz po twojej lokalizacji</p>
-            <button className='btn_location' onClick={fetchAsyncLocal}><MdMyLocation/></button>
+            <button className='btn_location' onClick={fetchAsyncLocal}><MdMyLocation /></button>
           </div>
         </div>
-        
+
         {(data.length === 0) ? (
-          <></>
+          <div className='bg_img'>
+          </div>
+
         ) : (
           <>
-          <div className='weather_text' >
-          <p>Dzisiejsza pogoda</p>
-          <p className='header_name'>Miejscowość: {(data.length !== 0) ? (data.location.name) : (<></>)} </p>
-        </div>
-          <div className='content'>
-            <ToDayWeather weatherData={data} />
-            <h2 className='long_term_tittle'>Pogoda {data.location.name} - prognoza długo terminowa </h2>
-            <FoureDays weatherData={data} />
-          </div>
+            <div className='weather_text' >
+              <p>Dzisiejsza pogoda</p>
+              <p className='header_name'>Miejscowość: {(data.length !== 0) ? (data.address) : (<></>)} </p>
+            </div>
+            <div className='content'>
+              <ToDayWeather weatherData={data} />
+              <h2 className='long_term_tittle'>Pogoda {data.address} - prognoza długo terminowa </h2>
+              <FoureDays weatherData={data} />
+            </div>
+
           </>
         )}
       </div>
