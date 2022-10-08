@@ -32,6 +32,20 @@ ul {
   grid-gap: 1.5rem;
 }
 
+.front_tittle .front_form{
+  border-radius: 25%;
+
+}
+
+.front_tittle .front_button{
+  background: none;
+  border: none;
+}
+
+.front_tittle .front_button:hover{
+  cursor:pointer;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -210,6 +224,7 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-left: 0.1rem;
 }
 
 .content .Days .box .box_body .tittle_text {

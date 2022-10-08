@@ -1,12 +1,12 @@
 import React from 'react'
 
 
-function Form({ city_name, setCity_Name, fetchAsync }) {
+function Form({ city_name, setCity_Name, fetchAsyncName }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetchAsync();
-    setCity_Name('')
+    fetchAsyncName();
+    setCity_Name('');
   }
 
   return (

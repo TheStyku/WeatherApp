@@ -63,7 +63,7 @@ function App() {
             <div className='header'>
               <div className='header_content'>
                 <p className='header_name'>Wyszukaj lokalizacje </p>
-                <Form className='form'  />
+                <Form className='form' city_name={city_name} setCity_Name={setCity_Name} fetchAsyncName={fetchAsyncName} />
               </div>
               <div className='header_content'>
                 <p className='header_name'>Znajdz po twojej lokalizacji</p>
