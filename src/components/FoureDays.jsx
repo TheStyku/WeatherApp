@@ -16,8 +16,8 @@ function FoureDays({ weatherData }) {
         <ul className='Days'>
             {weatherData.days.map((day, index) => (
                 <li key={index} className='box'>
-                    {(index.toString() === 0) ?
-                        (<></>) :
+                    {(index === 0) ?
+                        (console.log("")) :
                         (<>
                             <div className='box_day'>
                                 <p>{moment(day.datetime).format('dddd')}</p>
