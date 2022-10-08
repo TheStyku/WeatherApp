@@ -22,7 +22,7 @@ ul {
 
 .front_tittle{
   display: grid;
-  grid-template-columns: max-content;
+  grid-template-rows: auto auto auto auto;
   justify-content: center;
   align-items: center;
   justify-items: center;
@@ -32,9 +32,19 @@ ul {
   grid-gap: 1.5rem;
 }
 
-.front_tittle .front_form{
-  border-radius: 25%;
+.front_tittle p{
+  font-size: 1.5rem;
+}
 
+.front_tittle .front_form {
+
+  border-radius: 25%;
+}
+
+.front_tittle .front_form .input{
+  width: 15rem;
+  height: 1.5rem;
+ 
 }
 
 .front_tittle .front_button{
