@@ -25,9 +25,9 @@ function FoureDays({ weatherData }) {
                             </div>
                             <div className='box_body'>
                                 <Icon className='icon' weather={day.icon}></Icon>
-                                <p className='tittle_text'>{Math.trunc(day.tempmax)} &deg;C</p>
+                                <p className='tittle_text'>{Math.trunc(day.tempmax)}&deg;C</p>
                             </div><div className='box_day'>
-                                <p className='long_grey_text'>Minimalna {Math.trunc(day.tempmin)} &deg;C</p>
+                                <p className='long_grey_text'>Minimalna {Math.trunc(day.tempmin)}&deg;C</p>
                                 <p>{day.conditions}</p>
                             </div><div className='box_day'>
                                 <p className='long_grey_text'>Opady:</p>

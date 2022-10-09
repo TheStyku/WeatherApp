@@ -1,8 +1,12 @@
+:root{
+  --primary_font:2rem;
+  --secondary_font:1.5rem;
+}
+
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-
 }
 
 .react-icons {
@@ -20,7 +24,7 @@ ul {
   padding: 0;
 }
 
-.front_tittle{
+.front_tittle {
   display: grid;
   grid-template-rows: auto auto auto auto;
   justify-content: center;
@@ -32,28 +36,27 @@ ul {
   grid-gap: 1.5rem;
 }
 
-.front_tittle p{
+.front_tittle p {
   font-size: 1.5rem;
 }
 
 .front_tittle .front_form {
-
   border-radius: 25%;
 }
 
-.front_tittle .front_form .input{
+.front_tittle .front_form .input {
   width: 15rem;
   height: 1.5rem;
- 
 }
 
-.front_tittle .front_button{
+.front_tittle .front_button {
   background: none;
   border: none;
+  font-size: 1.5rem;
 }
 
-.front_tittle .front_button:hover{
-  cursor:pointer;
+.front_tittle .front_button:hover {
+  cursor: pointer;
 }
 
 .header {
@@ -71,12 +74,13 @@ ul {
 
 .header .header_content .btn_location {
   border: none;
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 50%;
-  background-color: #f0f7fc;
+  background: none;
+  font-size: 1.5rem;
 }
 
+.header .header_content .btn_location:hover {
+  cursor: pointer;
+}
 
 .header .header_content .header_name {
   text-align: center;
@@ -106,12 +110,11 @@ ul {
   opacity: 1;
 }
 
-.bg_img{
+.bg_img {
   background: url('C:\Users\Patryk Styczyński\Desktop\Projekty\React\weatherapp\img\sky.jpg') center center/cover no-repeat;
   background-color: #f0f7fc;
   max-width: 100%;
   height: 100vh;
-  
 }
 
 .weather_text {
@@ -122,15 +125,13 @@ ul {
   font-size: 1.5rem;
   padding-left: 3rem;
   justify-content: space-evenly;
-
 }
 
 .content {
-
   height: auto;
 }
 
-.content .long_term_tittle{
+.content .long_term_tittle {
   padding-top: 2rem;
   padding-left: 4rem;
 }
@@ -144,7 +145,6 @@ ul {
   width: 90%;
   margin: auto;
   border: 1px solid #dde8f0;
-
 }
 
 .content .To_Day_Weather .Weather_content {
@@ -155,7 +155,7 @@ ul {
 }
 
 .Weather_icon,
-.Weather_icon_Weather{
+.Weather_icon_Weather {
   background-color: aquamarine;
   color: white;
   width: 2rem;
@@ -180,7 +180,7 @@ ul {
 }
 
 .content .To_Day_Weather .To_Day_Weather_box .To_Day_Weather_box_tittle {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #8f8f8f;
 }
 
@@ -210,23 +210,24 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 0.9rem;
-}
-.content .Days .box .box_day p::first-letter{
-  text-transform:capitalize;
+  font-size: 1rem;
 }
 
-.content .Days .box .box_day .long_grey_text{
+.content .Days .box .box_day p::first-letter {
+  text-transform: capitalize;
+}
+
+.content .Days .box .box_day .long_grey_text {
   color: #8f8f8f;
 }
 
-.content .Days .box .box_day .box_icon{
+.content .Days .box .box_day .box_icon {
   display: flex;
 }
 
-.content .Days .box .box_day .box_icon .icon{
-  width: 1.3rem;
-  height: 1.3rem;
+.content .Days .box .box_day .box_icon .icon {
+  width: 1.4rem;
+  height: 1.4rem;
   color: aquamarine;
 }
 
@@ -265,23 +266,23 @@ ul {
   height: 35px;
 }
 
-@media(max-width: 1024px){
-  .Weather_icon_Weather{
+@media(max-width: 1024px) {
+  .Weather_icon_Weather {
     width: 2.5rem;
   }
 }
 
-@media(max-width: 769px) {
-  .Weather_icon_Weather{
+@media(max-width: 855px) {
+  .Weather_icon_Weather {
     width: 3rem;
   }
 
-  .header{
+  .header {
     flex-direction: column;
     align-items: center;
-  } 
+  }
 
-  .header .header_content:nth-child(2){
+  .header .header_content:nth-child(2) {
     padding-top: 1.2rem;
   }
 
@@ -289,54 +290,53 @@ ul {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
-
-  
 }
 
-@media(max-width: 600px) {
-  .Weather_icon_Weather{
+@media(max-width: 660px) {
+  .Weather_icon_Weather {
     width: 2rem;
   }
-  .front_tittle h1{
+
+  .front_tittle h1 {
     text-align: center;
   }
 
-  .content .To_Day_Weather{
+  .content .To_Day_Weather {
     grid-template-columns: 1fr 1.5fr;
     grid-template-rows: 1fr 1fr;
     justify-items: start;
   }
 
-.header .header_content:nth-child(1){
-  flex-direction: column;
-}
+  .header .header_content:nth-child(1) {
+    flex-direction: column;
+  }
 
-.header .header_content .header_name{
-  padding-top: 1vh;
-}
+  .header .header_content .header_name {
+    padding-top: 1vh;
+  }
 
-.header .header_content .form{
-  padding-top: 2vh;
-}
+  .header .header_content .form {
+    padding-top: 2vh;
+  }
 
-.weather_text{
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-}
+  .weather_text {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
 
-.weather_text .header_name{
-  padding-top: 1.2rem;
-}
+  .weather_text .header_name {
+    padding-top: 1.2rem;
+  }
 
-.content .Days .box{
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-}
+  .content .Days .box {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
 
-.content .long_term_tittle{
-  padding-left: 0;
-  text-align: center;
-}
+  .content .long_term_tittle {
+    padding-left: 0;
+    text-align: center;
+  }
 
 }
