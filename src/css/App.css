@@ -90,7 +90,6 @@ ul {
   padding-top: 5vh;
 }
 
-
 .header .header_content .form .input {
   border: 1px solid #555;
   width: -webkit-fill-available;
@@ -155,7 +154,8 @@ ul {
   margin: 1vh;
 }
 
-.Weather_icon{
+.Weather_icon,
+.Weather_icon_Weather{
   background-color: aquamarine;
   color: white;
   width: 2rem;
@@ -265,7 +265,17 @@ ul {
   height: 35px;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1024px){
+  .Weather_icon_Weather{
+    width: 2.5rem;
+  }
+}
+
+@media(max-width: 769px) {
+  .Weather_icon_Weather{
+    width: 3rem;
+  }
+
   .header{
     flex-direction: column;
     align-items: center;
@@ -279,16 +289,34 @@ ul {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
+
+  
 }
 
 @media(max-width: 600px) {
+  .Weather_icon_Weather{
+    width: 2rem;
+  }
+  .front_tittle h1{
+    text-align: center;
+  }
+
   .content .To_Day_Weather{
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     grid-template-rows: 1fr 1fr;
+    justify-items: start;
   }
 
 .header .header_content:nth-child(1){
   flex-direction: column;
+}
+
+.header .header_content .header_name{
+  padding-top: 1vh;
+}
+
+.header .header_content .form{
+  padding-top: 2vh;
 }
 
 .weather_text{
@@ -310,4 +338,5 @@ ul {
   padding-left: 0;
   text-align: center;
 }
+
 }

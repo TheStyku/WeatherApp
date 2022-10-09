@@ -12,11 +12,11 @@ function ToDayWeather({ weatherData }) {
     return (
         <div className='To_Day_Weather'>
             <div className='To_Day_Weather_Main'>               
-                <Icons  weather={weatherData.days[0].icon} className='Weather_icon'  />
+                <Icons  weather={weatherData.days[0].icon}  />
                 <p>{Math.trunc(weatherData.days[0].temp)}&deg;C</p>
             </div>
             <div className='Weather_content'>
-                <WiThermometer className='Weather_icon' />
+                <WiThermometer className='Weather_icon_Weather' />
                 <div className='To_Day_Weather_box'>
                     <p className='To_Day_Weather_box_tittle'>{weatherData.days[0].conditions}</p>
                     <p>Odczuwalna {Math.trunc(weatherData.days[0].feelslikemax)}&deg;C</p>
