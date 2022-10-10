@@ -156,7 +156,7 @@ ul {
 
 .Weather_icon,
 .Weather_icon_Weather {
-  background-color: aquamarine;
+  background-color: rgb(127, 168, 255);
   color: white;
   width: 2rem;
   height: 2rem;
@@ -228,7 +228,7 @@ ul {
 .content .Days .box .box_day .box_icon .icon {
   width: 1.4rem;
   height: 1.4rem;
-  color: aquamarine;
+  color: rgb(127, 168, 255);
 }
 
 .content .Days .box .box_body {

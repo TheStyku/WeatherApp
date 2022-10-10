@@ -18,6 +18,8 @@ function App() {
     axios.get(AppiPoint).then((response) => {
       setData(response.data)
       setLocation(true)
+    }).catch(err =>{
+      alert('Takie miasto nie istnieje')
     })
   }
 

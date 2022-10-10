@@ -15,7 +15,7 @@ function ToDayWeather({ weatherData }) {
                 <p>{Math.trunc(weatherData.days[0].temp)}&deg;C</p>
             </div>
             <div className='Weather_content'>
-                <WiThermometer className='Weather_icon_Weather' />
+                <WiThermometer className='Weather_icon_Weather termometr' />
                 <div className='To_Day_Weather_box'>
                     <p className='To_Day_Weather_box_tittle'>{weatherData.days[0].conditions}</p>
                     <p>Odczuwalna {Math.trunc(weatherData.days[0].feelslikemax)}&deg;C</p>
