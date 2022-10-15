@@ -110,11 +110,35 @@ ul {
   opacity: 1;
 }
 
-.bg_img {
-  background: url('C:\Users\Patryk Styczyński\Desktop\Projekty\React\weatherapp\img\sky.jpg') center center/cover no-repeat;
-  background-color: #f0f7fc;
+.bg {
+
+  background-color: skyblue;
+  top: 0;
+  left: 0;
   max-width: 100%;
   height: 100vh;
+}
+
+.cloud{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: url(../img/cloud.png);
+  background-size: auto 100%;
+  animation: animate 60s linear infinite;
+}
+
+@keyframes animate{
+
+  0%{
+    background-position: 0px;
+  }
+
+  100%{
+    background-position: 5540px;
+  }
 }
 
 .weather_text {

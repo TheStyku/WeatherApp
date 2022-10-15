@@ -18,7 +18,7 @@ function App() {
     axios.get(AppiPoint).then((response) => {
       setData(response.data)
       setLocation(true)
-    }).catch(err =>{
+    }).catch(err => {
       alert('Takie miasto nie istnieje')
     })
   }
@@ -42,8 +42,11 @@ function App() {
     <div className="App">
       <div className='container'>
         {(data.length === 0) ? (
-          <div className='bg_img'>
-            <FrontPage city_name={city_name} setCity_Name={setCity_Name} fetchAsyncName={fetchAsyncName} fetchAsyncLocal={fetchAsyncLocal} />
+          <div className='bg'>
+            <div className='cloud'>
+              <FrontPage city_name={city_name} setCity_Name={setCity_Name} fetchAsyncName={fetchAsyncName} fetchAsyncLocal={fetchAsyncLocal} />
+            </div>
+
           </div>
         ) : (
           <>
