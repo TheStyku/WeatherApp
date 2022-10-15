@@ -33,8 +33,9 @@ ul {
   align-content: center;
   width: auto;
   height: 100vh;
-  grid-gap: 1.5rem;
+  grid-gap: 2.5rem;
 }
+
 
 .front_tittle p {
   font-size: 1.5rem;
